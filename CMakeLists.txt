@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.10)
+
+set (CMAKE_CXX_STANDARD 23)
+set (CMAKE_CXX_STANDARD_REQUIRED True)
+
+project(AdventOfCode2023)
+
+add_executable(AoC2023 main.cpp)
+
+target_include_directories(AoC2023 PUBLIC ${AdventOfCode2023_SOURCE_DIR}/include)
+
+add_subdirectory(Day4)
+target_link_libraries(AoC2023 Day4)
+add_subdirectory(Day1)
+target_link_libraries(AoC2023 Day1)
+
+add_subdirectory(utils)
+target_link_libraries(AoC2023 Utils)
+
+add_subdirectory(test)
