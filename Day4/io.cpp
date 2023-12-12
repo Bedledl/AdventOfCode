@@ -26,11 +26,9 @@ void Input4::set_content(std::vector<std::string> lines) {
         winning_numbers = get_numbers_from_string(number_strings[0]);
         player_numbers = get_numbers_from_string(number_strings[1]);
 
-        scratchcard = new Scratchcard(
+        scratchcards.emplace_back(Scratchcard(
             winning_numbers,
             player_numbers
-        );
-
-        this->scratchcards.push_back(std::shared_ptr<Scratchcard>(scratchcard));
+        ));
     }
 }

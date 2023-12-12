@@ -16,7 +16,7 @@ class Scratchcard {
 
 
 struct Input4 : Input {
-    std::vector<std::shared_ptr<Scratchcard>> scratchcards; //unique??
+    std::vector<Scratchcard> scratchcards;
 
     private:
     void set_content(std::vector<std::string> lines) override;

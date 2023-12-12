@@ -12,7 +12,7 @@ struct Calibration {
 };
 
 struct Input1 : Input {
-    std::vector<std::shared_ptr<Calibration>> calibrations;
+    std::vector<Calibration> calibrations;
 
     private:
     void set_content(std::vector<std::string> lines) override;

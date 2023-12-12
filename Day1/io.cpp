@@ -13,6 +13,6 @@ void Input1::set_content(std::vector<std::string> lines) {
 
     for (std::string &line : lines) {
         // uses rvalue with emplace_back and move operation
-        calibrations.emplace_back(Calibration(std::move(line)));
+        calibrations.emplace_back(Calibration(line));
     }
 }

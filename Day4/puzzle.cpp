@@ -36,7 +36,7 @@ int Scratchcard::get_matches() {
 int run_puzzle_4(Input4 &input) {
     int points = 0;
 
-    for (auto sc : input->scratchcards) {
+    for (auto &sc : input.scratchcards) {
         points += sc.get_points();
     }
 

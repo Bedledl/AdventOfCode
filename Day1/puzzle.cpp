@@ -36,8 +36,8 @@ int Calibration::get_value() {
 int run_puzzle_1(Input1 &input) {
     int points = 0;
 
-    for (auto cal : input->calibrations) {
-        points += cal->get_value();
+    for (auto &cal : input.calibrations) {
+        points += cal.get_value();
     }
 
     std::cout << "------------- Puzzle 1 -----------" << std::endl; //TODO this can be generalised
