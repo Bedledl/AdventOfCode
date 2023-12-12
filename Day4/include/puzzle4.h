@@ -19,7 +19,7 @@ struct Input4 : Input {
     std::vector<std::shared_ptr<Scratchcard>> scratchcards; //unique??
 
     private:
-    void set_content(std::vector<std::string> &lines) override;
+    void set_content(std::vector<std::string> lines) override;
     public:
     using Input::Input;
 };

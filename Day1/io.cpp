@@ -9,7 +9,7 @@
 #include "process_input.h"
 
 
-void Input1::set_content(std::vector<std::string> &lines) {
+void Input1::set_content(std::vector<std::string> lines) {
 
     for (std::string &line : lines) {
         // uses rvalue with emplace_back and move operation

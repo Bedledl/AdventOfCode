@@ -92,7 +92,7 @@ struct TestInput : Input {
     using Input::Input;
 
     private:
-    void set_content(std::vector<std::string> &lines) override {
+    void set_content(std::vector<std::string> lines) override {
         read_lines = lines;
     }
 };

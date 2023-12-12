@@ -15,7 +15,7 @@ class Input {
     void init_from_file(std::filesystem::path path);
     void init_from_stream(std::istream &input);
     private:
-    // use rvalue, because set_content consumes the lines, that were read by the init_ methods
+    // we can pass lines by value, but better use an rvalue:)
     virtual void set_content(std::vector<std::string> lines) = 0;
 
 //    protected:

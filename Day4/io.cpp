@@ -16,7 +16,7 @@ std::array<std::string, 2> get_numbers_substrings(const std::string &line) {
     return std::array<std::string, 2> {split_at_dash[0], split_at_dash[1]};
 }
 
-void Input4::set_content(std::vector<std::string> &lines) {
+void Input4::set_content(std::vector<std::string> lines) {
     std::vector<int> winning_numbers;
     std::vector<int> player_numbers;
 

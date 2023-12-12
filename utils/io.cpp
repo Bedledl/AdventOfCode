@@ -24,7 +24,7 @@ void Input::init_from_file(std::filesystem::path path) {
     }
 
     // Errors here should terminate the program
-    this->set_content(lines);
+    set_content(std::move(lines));
 };
 
 void Input::init_from_stream(std::istream &input) {
@@ -43,5 +43,5 @@ void Input::init_from_stream(std::istream &input) {
         lines.emplace_back(std::move(line));
     }
 
-    this->set_content(lines);
+    set_content(std::move(lines));
 };
