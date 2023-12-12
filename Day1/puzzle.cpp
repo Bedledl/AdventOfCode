@@ -33,7 +33,7 @@ int Calibration::get_value() {
     return get_first_number() * 10 + get_last_number();
 }
 
-int run_puzzle_1(Input1 *input) {
+int run_puzzle_1(Input1 &input) {
     int points = 0;
 
     for (auto cal : input->calibrations) {

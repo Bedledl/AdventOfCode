@@ -24,4 +24,4 @@ struct Input4 : Input {
     using Input::Input;
 };
 
-int run_puzzle_4(Input4 *input);
+int run_puzzle_4(Input4 &input);

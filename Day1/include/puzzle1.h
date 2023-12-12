@@ -20,5 +20,5 @@ struct Input1 : Input {
     using Input::Input;
 };
 
-int run_puzzle_1(Input1 *input);
+int run_puzzle_1(Input1 &input);
 
