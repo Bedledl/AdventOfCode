@@ -7,6 +7,8 @@ project(AdventOfCode2023)
 
 add_executable(AoC2023 main.cpp)
 
+target_compile_definitions(AoC2023 PRIVATE INPUT_FILES_DIR="${AdventOfCode2023_SOURCE_DIR}/puzzle_input/")
+
 target_include_directories(AoC2023 PUBLIC ${AdventOfCode2023_SOURCE_DIR}/include)
 
 add_subdirectory(Day4)
