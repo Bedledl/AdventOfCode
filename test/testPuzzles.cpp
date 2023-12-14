@@ -12,9 +12,12 @@ class PuzzleTest : public testing::Test {
         std::function<int()> run_puzzle;
         int expected;
 
+        // not allowed
+        //static constexpr std::string test_files_dir = TEST_FILES_DIR;
+        static constexpr std::string test_files_dir()  { return TEST_FILES_DIR; };
 
         std::string build_input_file_name() const {
-            return std::string(TEST_FILES_DIR) + "/input" + name  + ".txt"; };
+            return test_files_dir() + "/input" + name  + ".txt"; };
 
         void init_input(Input &input_obj) {
             input_obj.init_from_file(build_input_file_name());
