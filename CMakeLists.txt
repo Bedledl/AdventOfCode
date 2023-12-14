@@ -13,6 +13,8 @@ add_subdirectory(Day4)
 target_link_libraries(AoC2023 Day4)
 add_subdirectory(Day1)
 target_link_libraries(AoC2023 Day1)
+add_subdirectory(Day2)
+target_link_libraries(AoC2023 Day2)
 
 add_subdirectory(utils)
 target_link_libraries(AoC2023 Utils)
