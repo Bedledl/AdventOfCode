@@ -21,4 +21,5 @@ target_link_libraries(AoC2023 Day2)
 add_subdirectory(utils)
 target_link_libraries(AoC2023 Utils)
 
+enable_testing()
 add_subdirectory(test)
