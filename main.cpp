@@ -29,7 +29,8 @@ int main(void) {
     // This is currently very un-beautiful
     day1::Input1 input1("1");
     init_input(input1);
-    run_puzzle_1(input1);
+    run_puzzle_1_1(input1);
+    run_puzzle_1_2(input1);
 
     Input2 input2 = Input2("2");
     init_input(input2);

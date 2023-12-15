@@ -29,14 +29,24 @@ class PuzzleTest : public testing::Test {
         }
 };
 
-TEST_F(PuzzleTest, Puzzle1) {
-    name = "1";
+TEST_F(PuzzleTest, Puzzle1_1) {
+    name = "1_1";
     expected = 142;
 
     Input1 input(name);
     init_input(input);
+    run_puzzle = [&input]() { return run_puzzle_1_1(input); };
 
-    run_puzzle = [&input]() { return run_puzzle_1(input); };
+    run();
+}
+
+TEST_F(PuzzleTest, Puzzle1_2) {
+    name = "1_2";
+    expected = 281;
+
+    Input1 input(name);
+    init_input(input);
+    run_puzzle = [&input]() { return run_puzzle_1_2(input); };
 
     run();
 }

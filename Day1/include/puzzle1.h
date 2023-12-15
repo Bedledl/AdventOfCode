@@ -3,12 +3,10 @@
 #include "io.h"
 
 struct Calibration {
-    Calibration(std::string calibration_text) : calibration_text(calibration_text) {};
-    int get_value();
+    Calibration(std::string calibration_text);
+    std::array<int, 2> get_value(bool include_nr_strings);
     private:
         std::string calibration_text;
-        int get_first_number();
-        int get_last_number();
 };
 
 struct Input1 : Input {
@@ -20,5 +18,5 @@ struct Input1 : Input {
     using Input::Input;
 };
 
-int run_puzzle_1(Input1 &input);
-
+int run_puzzle_1_1(Input1 &input);
+int run_puzzle_1_2(Input1 &input);
