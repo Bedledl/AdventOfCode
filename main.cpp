@@ -34,7 +34,8 @@ int main(void) {
 
     Input2 input2 = Input2("2");
     init_input(input2);
-    run_puzzle_2(input2);
+    run_puzzle_2_1(input2);
+    run_puzzle_2_2(input2);
 
     Input4 input4 = Input4("4");
     init_input(input4);
