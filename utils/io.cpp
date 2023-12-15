@@ -20,6 +20,10 @@ void Input::init_from_file(std::filesystem::path path) {
 
     std::string line;
     while (std::getline(file, line)) {
+        if(line == "") {
+            continue;
+        }
+
         lines.emplace_back(std::move(line));
     }
 
