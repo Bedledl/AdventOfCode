@@ -23,3 +23,18 @@ target_link_libraries(AoC2023 Utils)
 
 enable_testing()
 add_subdirectory(test)
+
+
+if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+    # require at least gcc 4.8
+    if (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 12)
+        message(FATAL_ERROR "GCC version must be at least 12! Currently: ${CMAKE_CXX_COMPILER_VERSION}")
+    endif()
+elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+    # require at least clang 3.2
+    if (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 16)
+        message(FATAL_ERROR "Clang version must be at least 16! Currently: ${CMAKE_CXX_COMPILER_VERSION}")
+    endif()
+else()
+    message(WARNING "You are using an unsupported compiler! Compilation has only been tested with Clang and GCC.")
+endif()
