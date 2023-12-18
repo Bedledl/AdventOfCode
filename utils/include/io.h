@@ -14,9 +14,9 @@
 ///
 class Input {
     public:
-    /// @brief Name of the Puzzle for which this input object is created. 
+    /// @brief Name of the Puzzle for which this input object is created.
     std::string puzzle_name;
-    Input() = delete;
+    Input() = delete; // not necessary, changes error message
     Input(std::string puzzle_name) : puzzle_name(puzzle_name) {};
     virtual ~Input() = default;
 

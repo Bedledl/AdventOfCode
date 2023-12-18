@@ -1,6 +1,8 @@
 #include <string>
 
 #include "io.h"
+#include "puzzle.h"
+
 
 namespace day1 {
 struct Calibration {
@@ -19,7 +21,20 @@ struct Input1 : Input {
     using Input::Input;
 };
 
-int run_puzzle_1_1(Input1 &input);
-int run_puzzle_1_2(Input1 &input);
+class Puzzle1 : public Puzzle<Input1> {
+    public:
+
+    Puzzle1() : Puzzle<Input1>("1") {};
+
+    /// @brief Run the first part of day 1's puzzle.
+    /// @param input TODO
+    /// @return
+    int run_part_1(Input1 &input) override;
+
+    /// @brief Run the second part of the day 1's puzzle
+    /// @param input
+    /// @return
+    int run_part_2(Input1 &input) override;
+};
 
 }

@@ -66,7 +66,7 @@ std::array<int, 2> day1::Calibration::get_value(bool include_nr_strings) {
     return std::array<int, 2>{first_last_nr[0], first_last_nr[2]};
 }
 
-int run_puzzle_1_1(Input1 &input) {
+int day1::Puzzle1::run_part_1(Input1 &input) {
     int points = 0;
 
     for (auto &cal : input.calibrations) {
@@ -79,7 +79,7 @@ int run_puzzle_1_1(Input1 &input) {
     return points;
 }
 
-int run_puzzle_1_2(Input1 &input) {
+int day1::Puzzle1::run_part_2(Input1 &input) {
     int points = 0;
 
     for (auto &cal : input.calibrations) {
