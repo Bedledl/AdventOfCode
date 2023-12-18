@@ -17,7 +17,6 @@ namespace day2  {
             int max_green;
             int max_red;
     };
-}
 
 struct Input2 : Input {
     std::vector<day2::Game> games;
@@ -29,3 +28,5 @@ struct Input2 : Input {
 
 int run_puzzle_2_1(Input2 &input);
 int run_puzzle_2_2(Input2 &input);
+
+}

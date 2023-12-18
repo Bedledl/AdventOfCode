@@ -57,10 +57,10 @@ TEST_F(PuzzleTest, Puzzle2_1) {
     name = "2_1";
     expected = 8;
 
-    Input2 input(name);
+    day2::Input2 input(name);
     init_input(input);
 
-    run_puzzle = [&input]() { return run_puzzle_2_1(input); };
+    run_puzzle = [&input]() { return day2::run_puzzle_2_1(input); };
 
     run();
 }
@@ -69,10 +69,10 @@ TEST_F(PuzzleTest, Puzzle2_2) {
     name = "2_2";
     expected = 2286;
 
-    Input2 input(name);
+    day2::Input2 input(name);
     init_input(input);
 
-    run_puzzle = [&input]() { return run_puzzle_2_2(input); };
+    run_puzzle = [&input]() { return day2::run_puzzle_2_2(input); };
 
     run();
 }

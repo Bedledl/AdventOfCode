@@ -35,7 +35,7 @@ int get_max_num_colored_balls(const std::string & find_in, std::string color) {
     return max_num;
 }
 
-void Input2::set_content(std::vector<std::string> lines) {
+void day2::Input2::set_content(std::vector<std::string> lines) {
 
     int id;
 
