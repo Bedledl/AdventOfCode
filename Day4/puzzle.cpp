@@ -8,11 +8,11 @@
 #include "puzzle4.h"
 
 
-Scratchcard::Scratchcard(std::vector<int> winning_numbers, std::vector<int> numbers)
+day4::Scratchcard::Scratchcard(std::vector<int> winning_numbers, std::vector<int> numbers)
     : winning_numbers(winning_numbers), numbers(numbers) {};
 
 
-int Scratchcard::get_points(){
+int day4::Scratchcard::get_points(){
     int matches = get_matches();
     if (matches == 0) {
         return 0;
@@ -22,7 +22,7 @@ int Scratchcard::get_points(){
     }
 };
 
-int Scratchcard::get_matches() {
+int day4::Scratchcard::get_matches() {
     int matches = 0;
 
     for (int n : numbers) {

@@ -1,6 +1,6 @@
 #include "io.h"
 
-
+namespace day4 {
 class Scratchcard {
     public:
     std::vector<int> winning_numbers;
@@ -13,10 +13,11 @@ class Scratchcard {
 
     int get_matches();
 };
+}
 
 
 struct Input4 : Input {
-    std::vector<Scratchcard> scratchcards;
+    std::vector<day4::Scratchcard> scratchcards;
 
     private:
     void set_content(std::vector<std::string> lines) override;
