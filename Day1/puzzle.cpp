@@ -46,11 +46,11 @@ std::array<int, 4> find_first_last_nr(const std::string &text, const std::map<st
 
 
 
-Calibration::Calibration(std::string calibration_text) : calibration_text(calibration_text) {
+day1::Calibration::Calibration(std::string calibration_text) : calibration_text(calibration_text) {
 
 };
 
-std::array<int, 2> Calibration::get_value(bool include_nr_strings) {
+std::array<int, 2> day1::Calibration::get_value(bool include_nr_strings) {
     auto first_last_nr = find_first_last_nr(calibration_text, map_nr());
 
     if (include_nr_strings) {
