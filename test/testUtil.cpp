@@ -62,7 +62,7 @@ class TestGetNumbersFromString : public testing::Test {
         std::string input;
         std::vector<int> expected;
         void run_test() {
-            std::vector<int> result = get_numbers_from_string(input);
+            std::vector<int> result = get_numbers_from_string(input, " ");
             EXPECT_EQ(expected, result);
         }
 };

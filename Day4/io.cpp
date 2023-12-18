@@ -23,8 +23,8 @@ void Input4::set_content(std::vector<std::string> lines) {
     for (const std::string &line : lines) {
          std::array<std::string, 2> number_strings = get_numbers_substrings(line);
 
-        winning_numbers = get_numbers_from_string(number_strings[0]);
-        player_numbers = get_numbers_from_string(number_strings[1]);
+        winning_numbers = get_numbers_from_string(number_strings[0], " ");
+        player_numbers = get_numbers_from_string(number_strings[1], " ");
 
         scratchcards.emplace_back(day4::Scratchcard(
             winning_numbers,

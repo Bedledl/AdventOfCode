@@ -35,11 +35,10 @@ std::vector<std::string> split (const std::string &input, std::string const &del
     return split_impl(input, split_str);
 }
 
-/*  parse string containing numbers delimited by spaces, e.g. "45 7 90 1"*/
-std::vector<int> get_numbers_from_string(std::string &numbers_string) {
+std::vector<int> get_numbers_from_string(std::string &numbers_string, std::string const &delimiter) {
     std::vector<int> numbers;
 
-    std::vector<std::string> split_numbers_string = split(numbers_string, " ");
+    std::vector<std::string> split_numbers_string = split(numbers_string, delimiter);
 
     std::ranges::transform(split_numbers_string, std::back_inserter(numbers), [](std::string maybe_number_string) {
         return std::stoi(maybe_number_string);
