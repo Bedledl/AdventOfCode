@@ -3,6 +3,7 @@
 #include "Day1/include/puzzle1.h"
 #include "Day2/include/puzzle2.h"
 #include "Day4/include/puzzle4.h"
+#include "Day12/include/puzzle12.h"
 
 constexpr std::string input_files_dir()  { return INPUT_FILES_DIR; };
 
@@ -40,5 +41,10 @@ int main(void) {
     puzzle2.run_part_2(input2);
     init_input(input4);
     run_puzzle_4(input4);
+
+    day12::Input12 input12("12");
+    init_input(input12);
+    day12::Puzzle12 puzzle12;
+    puzzle12.run_part_1(input12);
 
 }
