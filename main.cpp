@@ -34,10 +34,10 @@ int main(void) {
     puzzle1.run_part_2(input1);
     day2::Input2 input2 =day2:: Input2("2");
     init_input(input2);
-    run_puzzle_2_1(input2);
-    run_puzzle_2_2(input2);
-
     Input4 input4 = Input4("4");
+    day2::Puzzle2 puzzle2{};
+    puzzle2.run_part_1(input2);
+    puzzle2.run_part_2(input2);
     init_input(input4);
     run_puzzle_4(input4);
 

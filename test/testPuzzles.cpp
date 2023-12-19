@@ -60,7 +60,9 @@ TEST_F(PuzzleTest, Puzzle2_1) {
     day2::Input2 input(name);
     init_input(input);
 
-    run_puzzle = [&input]() { return day2::run_puzzle_2_1(input); };
+    day2::Puzzle2 puzzle{};
+
+    run_puzzle = [&input, &puzzle]() { return puzzle.run_part_1(input); };
 
     run();
 }
@@ -72,7 +74,9 @@ TEST_F(PuzzleTest, Puzzle2_2) {
     day2::Input2 input(name);
     init_input(input);
 
-    run_puzzle = [&input]() { return day2::run_puzzle_2_2(input); };
+    day2::Puzzle2 puzzle{};
+
+    run_puzzle = [&input, &puzzle]() { return puzzle.run_part_2(input); };
 
     run();
 }

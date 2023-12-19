@@ -39,7 +39,7 @@ int day2::Game::get_max(Color color) {
 }
 
 
-int day2::run_puzzle_2_1(day2::Input2 &input) {
+int day2::Puzzle2::run_part_1(day2::Input2 &input) {
     const int green_avail = 13;
     const int blue_avail = 14;
     const int red_avail = 12;
@@ -56,7 +56,7 @@ int day2::run_puzzle_2_1(day2::Input2 &input) {
     return points;
 }
 
-int day2::run_puzzle_2_2(day2::Input2 &input) {
+int day2::Puzzle2::run_part_2(day2::Input2 &input) {
     int points = 0;
 
     for (auto &game : input.games ) {
