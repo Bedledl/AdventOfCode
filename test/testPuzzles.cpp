@@ -5,6 +5,7 @@
 #include "puzzle1.h"
 #include "puzzle4.h"
 #include "puzzle2.h"
+#include "puzzle12.h"
 
 class PuzzleTest : public testing::Test {
     protected:
@@ -89,6 +90,34 @@ TEST_F(PuzzleTest, Puzzle4) {
     init_input(input);
 
     run_puzzle = [&input]() { return run_puzzle_4(input); };
+
+    run();
+}
+
+TEST_F(PuzzleTest, Puzzle12_1) {
+    name = "12_1";
+    expected = 21;
+
+    day12::Input12 input(name);
+    init_input(input);
+
+    day12::Puzzle12 puzzle{};
+
+    run_puzzle = [&input, &puzzle]() { return puzzle.run_part_1(input); };
+
+    run();
+}
+
+TEST_F(PuzzleTest, Puzzle12_2) {
+    name = "12_2";
+    expected = 525152;
+
+    day12::Input12 input(name);
+    init_input(input);
+
+    day12::Puzzle12 puzzle{};
+
+    run_puzzle = [&input, &puzzle]() { return puzzle.run_part_2(input); };
 
     run();
 }
