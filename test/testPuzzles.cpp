@@ -6,6 +6,7 @@
 #include "puzzle4.h"
 #include "puzzle2.h"
 #include "puzzle12_bf.h"
+#include "puzzle12.h"
 
 class PuzzleTest : public testing::Test {
     protected:
