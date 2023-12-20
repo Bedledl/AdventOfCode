@@ -8,9 +8,9 @@
 #include <string>
 
 #include <process_input.h>
-#include "puzzle12.h"
+#include "puzzle12_bf.h"
 
-const std::vector<int> day12::SpringRecord::get_broken_indices()
+const std::vector<int> day12_bf::SpringRecord::get_broken_indices()
 {
     std::vector<int> indices;
 
@@ -25,7 +25,7 @@ const std::vector<int> day12::SpringRecord::get_broken_indices()
     return indices;
 }
 
-const std::vector<std::string> day12::SpringRecord::get_records_permutations()
+const std::vector<std::string> day12_bf::SpringRecord::get_records_permutations()
 {
     // wrong we know the number of # in the string its:
     int num_dmgd_springs = std::reduce(group_of_dmgd_springs.begin(), group_of_dmgd_springs.end());
@@ -53,7 +53,7 @@ const std::vector<std::string> day12::SpringRecord::get_records_permutations()
     return permutations;
 }
 
-const std::regex day12::SpringRecord::get_regex()
+const std::regex day12_bf::SpringRecord::get_regex()
 {
     std::string regex = "\\.*";
 
@@ -78,11 +78,11 @@ const std::regex day12::SpringRecord::get_regex()
     return std::regex(regex);
 }
 
-int day12::SpringRecord::get_num_possible_arangements()
+int day12_bf::SpringRecord::get_num_possible_arangements()
 {
     int fitting_permutations = 0;
     const std::regex regex = get_regex();
-    const std::vector<std::string> records_permutations = day12::SpringRecord::get_records_permutations();
+    const std::vector<std::string> records_permutations = day12_bf::SpringRecord::get_records_permutations();
     int num_dmgd_springs = std::reduce(group_of_dmgd_springs.begin(), group_of_dmgd_springs.end());
 
     for (const std::string &permutation : records_permutations)
@@ -97,7 +97,7 @@ int day12::SpringRecord::get_num_possible_arangements()
     return fitting_permutations;
 }
 
-int day12::Puzzle12::run_part_1(Input12 &input)
+int day12_bf::Puzzle12::run_part_1(Input12 &input)
 {
     int points = 0;
     for (SpringRecord &record : input.records)
@@ -108,7 +108,7 @@ int day12::Puzzle12::run_part_1(Input12 &input)
     return points;
 }
 
-int day12::Puzzle12::run_part_2(Input12 &input)
+int day12_bf::Puzzle12::run_part_2(Input12 &input)
 {
     int points = 0;
     for (SpringRecord &record : input.records_unfolded)

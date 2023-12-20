@@ -1,10 +1,10 @@
 #include <string>
 #include <vector>
 
-#include "puzzle12.h"
+#include "puzzle12_bf.h"
 #include "process_input.h"
 
-void day12::Input12::set_content(std::vector<std::string> lines)
+void day12_bf::Input12::set_content(std::vector<std::string> lines)
 {
     for (const std::string &line : lines)
     {

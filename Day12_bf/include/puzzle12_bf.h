@@ -4,7 +4,7 @@
 #include "io.h"
 #include "puzzle.h"
 
-namespace day12
+namespace day12_bf
 {
 
     /// @brief Represents one line of the puzzle's input and provides methods to calculate the puzzle's result
@@ -27,8 +27,8 @@ namespace day12
 
     struct Input12 : Input
     {
-        std::vector<day12::SpringRecord> records;
-        std::vector<day12::SpringRecord> records_unfolded;
+        std::vector<day12_bf::SpringRecord> records;
+        std::vector<day12_bf::SpringRecord> records_unfolded;
 
     private:
         void set_content(std::vector<std::string> lines) override;
