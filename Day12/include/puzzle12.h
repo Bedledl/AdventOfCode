@@ -28,6 +28,7 @@ namespace day12
     struct Input12 : Input
     {
         std::vector<day12::SpringRecord> records;
+        std::vector<day12::SpringRecord> records_unfolded;
 
     private:
         void set_content(std::vector<std::string> lines) override;

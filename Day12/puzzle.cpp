@@ -108,9 +108,11 @@ int day12::Puzzle12::run_part_1(Input12 &input)
     return points;
 }
 
-int day12::Puzzle12::run_part_2(Input12 &input) {
+int day12::Puzzle12::run_part_2(Input12 &input)
+{
     int points = 0;
-    for (SpringRecord &record : input.records ) {
+    for (SpringRecord &record : input.records_unfolded)
+    {
         points += record.get_num_possible_arangements();
     }
 

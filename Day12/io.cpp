@@ -12,6 +12,20 @@ void day12::Input12::set_content(std::vector<std::string> lines)
 
         std::vector<int> groups = get_numbers_from_string(split_record[1], ",");
 
-        records.emplace_back(std::move(split_record[0]), groups);
+        std::string unfolded_record_str = "";
+        std::vector<int> groups_unfolded;
+        for (int i = 0; i < 5; ++i)
+        {
+            unfolded_record_str += split_record[0];
+            if (i < 4) {
+                unfolded_record_str += "?";
+            }
+
+            groups_unfolded.insert(groups_unfolded.end(), groups.begin(), groups.end());
+        }
+
+        records.emplace_back(std::move(split_record[0]), std::move(groups));
+
+        records_unfolded.emplace_back(std::move(unfolded_record_str), std::move(groups_unfolded));
     }
 }

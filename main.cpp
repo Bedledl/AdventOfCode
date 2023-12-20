@@ -45,6 +45,6 @@ int main(void) {
     day12::Input12 input12("12");
     init_input(input12);
     day12::Puzzle12 puzzle12;
-    puzzle12.run_part_1(input12);
-
+    std::cout << puzzle12.run_part_1(input12) << std::endl;
+    std::cout << puzzle12.run_part_2(input12) << std::endl;
 }
