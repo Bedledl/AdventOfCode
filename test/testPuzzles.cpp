@@ -122,3 +122,31 @@ TEST_F(PuzzleTest, Puzzle12_2) {
 
     run();
 }
+
+TEST_F(PuzzleTest, Puzzle12_1_optim) {
+    name = "12_1_optim";
+    expected = 21;
+
+    day12::Input12 input(name);
+    init_input(input);
+
+    day12::Puzzle12 puzzle{};
+
+    run_puzzle = [&input, &puzzle]() { return puzzle.run_part_1(input); };
+
+    run();
+}
+
+TEST_F(PuzzleTest, Puzzle12_2_optim) {
+    name = "12_2_optim";
+    expected = 525152;
+
+    day12::Input12 input(name);
+    init_input(input);
+
+    day12::Puzzle12 puzzle{};
+
+    run_puzzle = [&input, &puzzle]() { return puzzle.run_part_2(input); };
+
+    run();
+}
