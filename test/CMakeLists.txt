@@ -33,6 +33,7 @@ target_link_libraries(testPuzzles Day2 Utils)
 target_link_libraries(testPuzzles Day4 Utils)
 target_link_libraries(testPuzzles Day12_bf Utils)
 target_link_libraries(testPuzzles Day12 Utils)
+target_link_libraries(testPuzzles Day17 Utils)
 
 target_link_libraries(testPuzzles GTest::gtest_main)
 include(GoogleTest)
