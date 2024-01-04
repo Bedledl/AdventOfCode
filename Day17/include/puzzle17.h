@@ -132,15 +132,12 @@ namespace day17
     };
 
 
-    /// @brief Pathfinder strategy for Puzzle 17 Part 1
-    class ShortestDistanceFinder_UpTo3 {
+    /// @brief Pathfinder strategy for Puzzle 17
+    class ShortestDistanceFinder {
+        const int min_same_dir;
+        const int max_same_dir;
         public:
-        int find_shortest_path(Map &map, int startx, int starty, int endx, int endy);
-    };
-
-    /// @brief Pathfinder strategy for Puzzle 17 Part 2
-    class ShortestDistanceFinder_4To10 {
-        public:
+        ShortestDistanceFinder(int min_same_dir, int max_same_dir) : min_same_dir(min_same_dir), max_same_dir(max_same_dir) {};
         int find_shortest_path(Map &map, int startx, int starty, int endx, int endy);
     };
 
