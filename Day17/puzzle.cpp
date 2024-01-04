@@ -24,18 +24,9 @@ int day17::ShortestDistanceFinder::find_shortest_path(
     }
 
     start->make_start();
-    for (auto dir : {Direction::East, Direction::South}) {
-        auto path = new Path(0, 0);
 
-        auto neighbor = map.get_neighbor(*start, dir);
-
-        if (!neighbor) {
-            continue;
-        }
-        path->move(dir, neighbor->get_heatloss());
-        neighbor->update_highscores(dir, path->get_moved_in_dir(), path->get_shortest_distance());
-        queue.update(path, true);
-    }
+    auto path = new Path(0, 0);
+    queue.update(path, true);
 
     while(!queue.empty()) {
         auto current = queue.pop();
@@ -45,14 +36,17 @@ int day17::ShortestDistanceFinder::find_shortest_path(
                 continue;
             }
 
-            if(!current->keeps_at_least_x_blocks_rule(dir, min_same_dir)) {
-                continue;
-            }
             if (!current->keeps_x_blocks_rule(dir, max_same_dir)){
                 continue;
             }
 
             int try_n_moves = (dir != current->get_direction()) ? min_same_dir : 1;
+
+            // This is just for early break
+            auto coordinates = current->get_coordinates();
+            if (!map.get_neighbor(coordinates.first, coordinates.second, dir, try_n_moves)) {
+                continue;
+            }
 
             auto path_copy = new Path(*current);
             day17::Field *neighbor = NULL;

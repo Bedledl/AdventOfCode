@@ -94,8 +94,8 @@ namespace day17
         /// @param  should be an i x j vector
         Map(std::vector<std::vector<int>> raw_map, int max_same_dir);
         Field* get_at(int x, int y);
-        Field* get_neighbor(int x, int y, Direction dir);
-        Field* get_neighbor(Field &path, Direction dir);
+        Field* get_neighbor(day17::Field &field, Direction dir, int n = 1);
+        Field* get_neighbor(int x, int y, Direction dir, int n = 1);
         /// @brief Prints the path to the specified destination
         /// @param x
         /// @param y

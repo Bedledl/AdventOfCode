@@ -20,32 +20,32 @@ day17::Map::Map(std::vector<std::vector<int>> raw_map, int max_same_dir) {
     }
 }
 
-day17::Field* day17::Map::get_neighbor(day17::Field &field, day17::Direction dir) {
+day17::Field* day17::Map::get_neighbor(day17::Field &field, day17::Direction dir, int n) {
     auto coords = field.get_coordinates();
-    return get_neighbor(coords.first, coords.second, dir);
+    return get_neighbor(coords.first, coords.second, dir, n);
 }
 
-day17::Field* day17::Map::get_neighbor(int x, int y, day17::Direction dir) {
+day17::Field* day17::Map::get_neighbor(int x, int y, day17::Direction dir, int n) {
     switch (dir)
     {
     case Direction::North:
-        if (x > 0 ) {
-            return &map[x - 1][y];
+        if (x - n >= 0 ) {
+            return &map[x - n][y];
         }
         break;
     case Direction::East:
-        if (y < size_y-1) {
-            return &map[x][y + 1];
+        if (y < size_y-n) {
+            return &map[x][y + n];
         }
         break;
     case Direction::South:
-        if (x < size_x-1) {
-            return &map[x + 1][y];
+        if (x < size_x-n) {
+            return &map[x + n][y];
         }
         break;
     case Direction::West:
-        if (y > 0) {
-            return &map[x][y - 1];
+        if (y - n >= 0) {
+            return &map[x][y - n];
         }
         break;
     }
