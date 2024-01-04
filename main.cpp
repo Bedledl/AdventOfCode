@@ -45,6 +45,7 @@ int main(void) {
     init_input(input4);
     day4::Puzzle4 puzzle4;
     puzzle4.run_part_1(input4);
+    puzzle4.run_part_2(input4);
 
     day12_bf::Input12 input12_bf("12");
     init_input(input12_bf);

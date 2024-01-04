@@ -1,5 +1,6 @@
 add_library(Day4 STATIC
-${CMAKE_CURRENT_SOURCE_DIR}/puzzle.cpp 
+${CMAKE_CURRENT_SOURCE_DIR}/pileProcessor.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/puzzle.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/io.cpp
 )
 

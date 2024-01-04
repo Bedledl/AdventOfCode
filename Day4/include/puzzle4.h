@@ -11,10 +11,17 @@ namespace day4 {
 
         Scratchcard(std::vector<int> winning_numbers, std::vector<int> numbers);
         int get_points();
+        int get_matches();
 
         private:
         std::optional<int> points;
-        int get_matches();
+    };
+
+    class SratchcardPileProcessor {
+    public:
+        int get_points(std::vector<day4::Scratchcard> &scratchcards);
+    private:
+        void set_num_copies(std::vector<unsigned> &num_copies, unsigned i, unsigned matches, unsigned times);
     };
 
     struct Input4 : Input {
