@@ -155,7 +155,7 @@ namespace day17
         Input17(std::string name, int max_same_dir) : Input(name), max_same_dir(max_same_dir) {};
     };
 
-    class Puzzle17 : Puzzle<Input17>
+    class Puzzle17 : public Puzzle<Input17>
     {
     public:
         Puzzle17() : Puzzle<Input17>("17"){};

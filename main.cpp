@@ -32,20 +32,21 @@ int main(void) {
     // This is currently very un-beautiful
     day1::Input1 input1("1");
     init_input(input1);
-    day1::Puzzle1 puzzle1 = day1::Puzzle1();
-    puzzle1.run_part_1(input1);
-    puzzle1.run_part_2(input1);
-    day2::Input2 input2 =day2:: Input2("2");
+    day1::Puzzle1 puzzle1;
+    puzzle1.print_result(1, puzzle1.run_part_1(input1));
+    puzzle1.print_result(2, puzzle1.run_part_2(input1));
+
+    day2::Input2 input2 = day2::Input2("2");
     init_input(input2);
-    day2::Puzzle2 puzzle2{};
-    puzzle2.run_part_1(input2);
-    puzzle2.run_part_2(input2);
+    day2::Puzzle2 puzzle2;
+    puzzle2.print_result(1, puzzle2.run_part_1(input2));
+    puzzle2.print_result(2,  puzzle2.run_part_2(input2));
 
     day4::Input4 input4{"4"};
     init_input(input4);
     day4::Puzzle4 puzzle4;
-    puzzle4.run_part_1(input4);
-    puzzle4.run_part_2(input4);
+    puzzle4.print_result(1, puzzle4.run_part_1(input4));
+    puzzle4.print_result(2, puzzle4.run_part_2(input4));
 
     day12_bf::Input12 input12_bf("12");
     init_input(input12_bf);

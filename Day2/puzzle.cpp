@@ -51,8 +51,6 @@ int day2::Puzzle2::run_part_1(day2::Input2 &input) {
         }
     }
 
-    std::cout << "------------- Puzzle 2 Part 1 -----------" << std::endl; //TODO this can be generalised
-    std::cout << "Points: " << points << "\n";
     return points;
 }
 
@@ -66,7 +64,5 @@ int day2::Puzzle2::run_part_2(day2::Input2 &input) {
         points += max_blue * max_green * max_red;
     }
 
-    std::cout << "------------- Puzzle 2 Part 2 -----------" << std::endl; //TODO this can be generalised
-    std::cout << "Points: " << points << "\n";
     return points;
 }

@@ -33,7 +33,7 @@ namespace day4 {
         using Input::Input;
     };
 
-    class Puzzle4 : Puzzle<Input4> {
+    class Puzzle4 : public Puzzle<Input4> {
     public:
         Puzzle4() : Puzzle<Input4>("4") {};
 

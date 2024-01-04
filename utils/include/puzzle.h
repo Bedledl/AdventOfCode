@@ -19,6 +19,10 @@ class Puzzle {
     void run_and_print_puzzle(I &input, Output &outout) {
         std::cout << "Print Test" << std::endl;
     };
+    void print_result(int part, int result) {
+        std::cout << "------------- Puzzle " << puzzle_name<<" Part "<< part <<" -----------" << std::endl;
+        std::cout << "Points: " << result << "\n";
+    };
     private:
     std::string puzzle_name;
 };

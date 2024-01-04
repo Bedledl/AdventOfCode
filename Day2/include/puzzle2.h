@@ -28,7 +28,7 @@ struct Input2 : Input {
 };
 
 
-    class Puzzle2 : Puzzle<Input2> {
+    class Puzzle2 : public Puzzle<Input2> {
         public:
         Puzzle2() : Puzzle<Input2>("2") {};
 

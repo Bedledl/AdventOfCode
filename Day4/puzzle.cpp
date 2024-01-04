@@ -45,18 +45,10 @@ int day4::Puzzle4::run_part_1(Input4 &input) {
     for (auto &sc : input.scratchcards) {
         points += sc.get_points();
     }
-
-    std::cout << "------------- Puzzle 4 -----------" << std::endl; //TODO this can be generalised
-    std::cout << "Points: " << points << "\n";
     return points;
 }
 
 int day4::Puzzle4::run_part_2(Input4 &input) {
     day4::SratchcardPileProcessor pileProcessor;
-    int points = pileProcessor.get_points(input.scratchcards);
-
-
-    std::cout << "------------- Puzzle 4 -----------" << std::endl; //TODO this can be generalised
-    std::cout << "Points: " << points << "\n";
-    return points;
+    return pileProcessor.get_points(input.scratchcards);
 }

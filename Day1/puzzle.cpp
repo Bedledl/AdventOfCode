@@ -74,8 +74,6 @@ int day1::Puzzle1::run_part_1(Input1 &input) {
         points += 10 * first_last_number[0] + first_last_number[1];
     }
 
-    std::cout << "------------- Puzzle 1 Part 1 -----------" << std::endl; //TODO this can be generalised
-    std::cout << "Points: " << points << "\n";
     return points;
 }
 
@@ -87,7 +85,5 @@ int day1::Puzzle1::run_part_2(Input1 &input) {
         points +=  10 * first_last_number[0] + first_last_number[1];
     }
 
-    std::cout << "------------- Puzzle 1 Part 2 -----------" << std::endl; //TODO this can be generalised
-    std::cout << "Points: " << points << "\n";
     return points;
 }
