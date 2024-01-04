@@ -1,5 +1,4 @@
 add_library(Day17 STATIC
-${CMAKE_CURRENT_SOURCE_DIR}/direction.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/field.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/map.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/path.cpp

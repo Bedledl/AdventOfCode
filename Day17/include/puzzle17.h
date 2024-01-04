@@ -6,17 +6,10 @@
 
 #include "io.h"
 #include "puzzle.h"
+#include "direction.h"
 
 namespace day17
 {
-    /// @brief Enum which defines the directions in which the Lava can flow.
-    enum class Direction {
-        None, North, East, South, West
-    };
-
-    std::optional<day17::Direction> get_opposite_direction(day17::Direction dir);
-    char get_char_to_direction(day17::Direction dir);
-
     /// @brief Stores the current end field, length and moves in the current direction for a Path.
     /// At each node a copy of the respective is made for each available direction.
     class Path {
