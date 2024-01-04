@@ -88,10 +88,12 @@ TEST_F(PuzzleTest, Puzzle4) {
     name = "4";
     expected = 13;
 
-    Input4 input(name);
+    day4::Input4 input(name);
     init_input(input);
 
-    run_puzzle = [&input]() { return run_puzzle_4(input); };
+    day4::Puzzle4 puzzle;
+
+    run_puzzle = [&input, &puzzle]() { return puzzle.run_part_1(input); };
 
     run();
 }

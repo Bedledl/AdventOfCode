@@ -13,13 +13,19 @@ day4::Scratchcard::Scratchcard(std::vector<int> winning_numbers, std::vector<int
 
 
 int day4::Scratchcard::get_points(){
+    if (points) {
+        return points.value();
+    }
+
     int matches = get_matches();
     if (matches == 0) {
-        return 0;
+        points = 0;
     }
     else {
-        return 1 << (matches - 1);
+        points = 1 << (matches - 1);
     }
+
+    return points.value();
 };
 
 int day4::Scratchcard::get_matches() {
@@ -33,7 +39,19 @@ int day4::Scratchcard::get_matches() {
     return matches;
 };
 
-int run_puzzle_4(Input4 &input) {
+int day4::Puzzle4::run_part_1(Input4 &input) {
+    int points = 0;
+
+    for (auto &sc : input.scratchcards) {
+        points += sc.get_points();
+    }
+
+    std::cout << "------------- Puzzle 4 -----------" << std::endl; //TODO this can be generalised
+    std::cout << "Points: " << points << "\n";
+    return points;
+}
+
+int day4::Puzzle4::run_part_2(Input4 &input) {
     int points = 0;
 
     for (auto &sc : input.scratchcards) {
