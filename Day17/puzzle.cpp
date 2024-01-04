@@ -33,12 +33,12 @@ int day17::ShortestDistanceFinder::find_shortest_path(
             continue;
         }
         path->move(dir, neighbor->get_heatloss());
+        neighbor->update_highscores(dir, path->get_moved_in_dir(), path->get_shortest_distance());
         queue.update(path, true);
     }
 
     while(!queue.empty()) {
         auto current = queue.pop();
-        auto coordinates = current->get_coordinates();
         for (auto dir : {Direction::North, Direction::East, Direction::South, Direction::West}) {
 
             if (current->is_opposite_direction(dir)) {
@@ -51,21 +51,29 @@ int day17::ShortestDistanceFinder::find_shortest_path(
             if (!current->keeps_x_blocks_rule(dir, max_same_dir)){
                 continue;
             }
-            auto neighbor = map.get_neighbor(coordinates.first, coordinates.second, dir);
+
+            int try_n_moves = (dir != current->get_direction()) ? min_same_dir : 1;
+
+            auto path_copy = new Path(*current);
+            day17::Field *neighbor = NULL;
+
+            for (int i=0; i<try_n_moves; ++i) {
+                auto coordinates = path_copy->get_coordinates();
+                neighbor = map.get_neighbor(coordinates.first, coordinates.second, dir);
+                if (!neighbor) {
+                    break;
+                }
+
+                path_copy->move(dir, neighbor->get_heatloss());
+            }
+
             if (!neighbor) {
                 continue;
             }
 
-            int moved_in_dir = (dir == current->get_direction()) ? current->get_moved_in_dir() + 1 : 1;
-            if (moved_in_dir >= min_same_dir) {
-
-                if (!neighbor->update_highscores(dir, moved_in_dir, current->get_shortest_distance())) {
+            if (!neighbor->update_highscores(dir, path_copy->get_moved_in_dir(), path_copy->get_shortest_distance())) {
                     continue;
-                }
             }
-
-            auto path_copy = new Path(*current);
-            path_copy->move(dir, neighbor->get_heatloss());
 
             queue.update(path_copy, true);
         }

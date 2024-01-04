@@ -31,5 +31,5 @@ int day17::Field::get_shortest_distance() {
         auto min_value_for_dir = std::min_element(value.begin(), value.end());
         min_value = std::min(min_value, *min_value_for_dir);
     }
-    return min_value + heatloss;
+    return min_value;
 }
