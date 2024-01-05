@@ -69,4 +69,6 @@ int main(void) {
     day17::Puzzle17 puzzle17;
     puzzle17.print_result(1, puzzle17.run_part_1(input17_1));
     puzzle17.print_result(2, puzzle17.run_part_2(input17_2));
+    std::cout << puzzle17.get_time_to_run_1(input17_1) << std::endl;
+    std::cout << puzzle17.get_time_to_run_2(input17_2) << std::endl;
 }
