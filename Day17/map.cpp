@@ -62,6 +62,10 @@ day17::Map::Map(std::vector<std::vector<uint8_t>> raw_map, uint8_t max_same_dir)
     return {};
 }
 
+[[nodiscard]] day17::Field* day17::Map::get_at(std::pair<uint8_t, uint8_t> coords) {
+    return get_at(coords.first, coords.second);
+}
+
 /*
 void day17::Map::print_path(int x, int y) {
     std::vector<std::string> map;
