@@ -13,8 +13,8 @@
 #include <unistd.h>
 
 
-int day17::ShortestDistanceFinder::find_shortest_path(
-    Map &map, int startx, int starty, int endx, int endy) {
+[[nodiscard]] unsigned day17::ShortestDistanceFinder::find_shortest_path(
+    Map &map, uint8_t startx, uint8_t starty, uint8_t endx, uint8_t endy) {
 
     auto queue = DijkstraQueue<Path, PathComparator>();
     auto start = map.get_at(startx, starty);
@@ -40,7 +40,7 @@ int day17::ShortestDistanceFinder::find_shortest_path(
                 continue;
             }
 
-            int try_n_moves = (dir != current->get_direction()) ? min_same_dir : 1;
+            uint8_t try_n_moves = (dir != current->get_direction()) ? min_same_dir : 1;
 
             // This is just for early break
             auto coordinates = current->get_coordinates();
@@ -51,7 +51,7 @@ int day17::ShortestDistanceFinder::find_shortest_path(
             auto path_copy = new Path(*current);
             day17::Field *neighbor = NULL;
 
-            for (int i=0; i<try_n_moves; ++i) {
+            for (uint8_t i=0; i<try_n_moves; ++i) {
                 auto coordinates = path_copy->get_coordinates();
                 neighbor = map.get_neighbor(coordinates.first, coordinates.second, dir);
                 if (!neighbor) {

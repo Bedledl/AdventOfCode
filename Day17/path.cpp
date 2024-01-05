@@ -1,6 +1,6 @@
 #include "puzzle17.h"
 
-bool day17::Path::is_smaller_than(day17::Path &path) {
+[[nodiscard]] bool day17::Path::is_smaller_than(day17::Path &path) const {
             if (min_distance == path.min_distance) {
                 if (moved_in_dir == path.moved_in_dir) {
                     if (x == path.x) {
@@ -20,7 +20,7 @@ bool day17::Path::is_smaller_than(day17::Path &path) {
             return min_distance < path.min_distance;
         }
 
-void day17::Path::move(Direction dir, int additional_heatloss) {
+void day17::Path::move(Direction dir, uint8_t additional_heatloss) {
     switch(dir) {
         case Direction::North:
             --x;

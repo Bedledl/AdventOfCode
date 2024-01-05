@@ -3,11 +3,11 @@
 #include "include/puzzle17.h"
 #include <unistd.h>
 
-day17::Map::Map(std::vector<std::vector<int>> raw_map, int max_same_dir) {
+day17::Map::Map(std::vector<std::vector<uint8_t>> raw_map, uint8_t max_same_dir) {
     size_x = raw_map.size();
     size_y = raw_map[0].size();
     map.resize(size_x);
-    for (int i=0; i< size_x; ++i) {
+    for (uint8_t i=0; i< size_x; ++i) {
         auto inner_vector = raw_map[i];
         if (inner_vector.size() != size_y) {
             throw std::runtime_error(
@@ -20,12 +20,12 @@ day17::Map::Map(std::vector<std::vector<int>> raw_map, int max_same_dir) {
     }
 }
 
-day17::Field* day17::Map::get_neighbor(day17::Field &field, day17::Direction dir, int n) {
+[[nodiscard]] day17::Field* day17::Map::get_neighbor(day17::Field &field, day17::Direction dir, uint8_t n) {
     auto coords = field.get_coordinates();
     return get_neighbor(coords.first, coords.second, dir, n);
 }
 
-day17::Field* day17::Map::get_neighbor(int x, int y, day17::Direction dir, int n) {
+[[nodiscard]] day17::Field* day17::Map::get_neighbor(uint8_t x, uint8_t y, day17::Direction dir, uint8_t n) {
     switch (dir)
     {
     case Direction::North:
@@ -53,7 +53,7 @@ day17::Field* day17::Map::get_neighbor(int x, int y, day17::Direction dir, int n
     return NULL;
 }
 
-day17::Field* day17::Map::get_at(int x, int y) {
+[[nodiscard]] day17::Field* day17::Map::get_at(uint8_t x, uint8_t y) {
     if (0 <= x < size_x) {
         if (0 <= y < size_y) {
             return &map[x][y];
