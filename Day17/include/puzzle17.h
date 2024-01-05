@@ -15,10 +15,10 @@ namespace day17
     class Path {
         private:
         int min_distance = 0;
-        Direction current_direction = Direction::None;
         int moved_in_dir = 0;
         int x;
         int y;
+        Direction current_direction = Direction::None;
         public:
         Path(int x, int y) : x(x), y(y) {};
         std::pair<int, int> get_coordinates() {return {x, y};}
@@ -26,6 +26,7 @@ namespace day17
         // this method is important to sort the Paths in the Queue.
         // It is independent of the coordinates of the path.
         bool is_smaller_than(Path &path);
+        auto operator<=>(const Path& path) const = default;
         bool keeps_x_blocks_rule(Direction dir, int x) {
             if (dir != current_direction) {
                 return true;
