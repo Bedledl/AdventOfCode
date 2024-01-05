@@ -48,16 +48,16 @@ int main(void) {
     puzzle4.print_result(1, puzzle4.run_part_1(input4));
     puzzle4.print_result(2, puzzle4.run_part_2(input4));
 
-    day12_bf::Input12 input12_bf("12");
-    init_input(input12_bf);
-    day12_bf::Puzzle12 puzzle12_bf;
-    std::cout << puzzle12_bf.run_part_1(input12_bf) << std::endl;
+    // day12_bf::Input12 input12_bf("12");
+    // init_input(input12_bf);
+    // day12_bf::Puzzle12 puzzle12_bf;
+    // std::cout << puzzle12_bf.run_part_1(input12_bf) << std::endl;
 
-    day12::Input12 input12("12");
-    init_input(input12);
-    day12::Puzzle12 puzzle12;
-    std::cout << puzzle12.run_part_1(input12) << std::endl;
-    std::cout << puzzle12.run_part_2(input12) << std::endl;
+    // day12::Input12 input12("12");
+    // init_input(input12);
+    // day12::Puzzle12 puzzle12;
+    // std::cout << puzzle12.run_part_1(input12) << std::endl;
+    // std::cout << puzzle12.run_part_2(input12) << std::endl;
 
 
     day17::Input17 input17_1 = day17::Input17("17", 3);

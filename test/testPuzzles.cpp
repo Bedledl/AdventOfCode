@@ -38,7 +38,7 @@ TEST_F(PuzzleTest, Puzzle1_1) {
 
     day1::Input1 input(name);
     init_input(input);
-    day1::Puzzle1 puzzle{};
+    day1::Puzzle1 puzzle;
     run_puzzle = [&input, &puzzle]() { return puzzle.run_part_1(input); };
 
     run();
@@ -50,7 +50,7 @@ TEST_F(PuzzleTest, Puzzle1_2) {
 
     day1::Input1 input(name);
     init_input(input);
-    day1::Puzzle1 puzzle{};
+    day1::Puzzle1 puzzle;
     run_puzzle = [&input, &puzzle]() { return puzzle.run_part_2(input); };
 
     run();
@@ -63,7 +63,7 @@ TEST_F(PuzzleTest, Puzzle2_1) {
     day2::Input2 input(name);
     init_input(input);
 
-    day2::Puzzle2 puzzle{};
+    day2::Puzzle2 puzzle;
 
     run_puzzle = [&input, &puzzle]() { return puzzle.run_part_1(input); };
 
