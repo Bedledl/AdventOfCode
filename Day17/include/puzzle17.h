@@ -128,7 +128,7 @@ namespace day17
             std::cout << "\n";
         }
 
-        const bool empty() { return queue.empty(); }
+        bool empty() { return queue.empty(); }
     };
 
 
