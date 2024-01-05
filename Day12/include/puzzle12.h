@@ -11,15 +11,15 @@ namespace day12
         public:
         void add_dot();
         void add_hashtag();
-        const bool fits_in(const std::vector<int> &expected_groups);
-        const bool fits_accuratly(const std::vector<int> &expected_groups);
-        const bool would_fit_with_dot(const std::vector<int> &expected_groups);
-        const bool would_fit_with_hashtag(const std::vector<int> &expected_groups);
-        const void print();
+        bool fits_in(const std::vector<int> &expected_groups) const;
+        bool fits_accuratly(const std::vector<int> &expected_groups) const;
+        bool would_fit_with_dot(const std::vector<int> &expected_groups) const;
+        bool would_fit_with_hashtag(const std::vector<int> &expected_groups) const;
+        void print() const;
         private:
         std::vector<int> curr_groups;
         int curr_group_length = 0;
-        const bool in_group() { return curr_group_length > 0; }
+        bool in_group() const { return curr_group_length > 0; }
     };
 
     /// @brief Represents one line of the puzzle's input and provides methods to calculate the puzzle's result

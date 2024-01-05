@@ -16,12 +16,12 @@ void day12::Path::add_hashtag() {
     }
 }
 
-const bool day12::Path::fits_in(const std::vector<int> &expected_groups) {
+bool day12::Path::fits_in(const std::vector<int> &expected_groups) const {
     if (expected_groups.size() < curr_groups.size()) {
         return false;
     }
 
-    for (int i=0; i<curr_groups.size(); ++i) {
+    for (size_t i=0; i<curr_groups.size(); ++i) {
         if (curr_groups[i] != expected_groups[i]){
             return false;
         }
@@ -30,7 +30,7 @@ const bool day12::Path::fits_in(const std::vector<int> &expected_groups) {
     return true;
 }
 
-const bool day12::Path::fits_accuratly(const std::vector<int> &expected_groups) {
+bool day12::Path::fits_accuratly(const std::vector<int> &expected_groups) const {
     if(!fits_in(expected_groups)){
         return false;
     }
@@ -38,7 +38,7 @@ const bool day12::Path::fits_accuratly(const std::vector<int> &expected_groups) 
     return curr_groups.size() == expected_groups.size();
 }
 
-const bool day12::Path::would_fit_with_dot(const std::vector<int> &expected_groups) {
+bool day12::Path::would_fit_with_dot(const std::vector<int> &expected_groups) const {
     if (in_group()) {
         // the dot would finnish a new group
         if (expected_groups.size() < curr_groups.size() + 1) {
@@ -53,7 +53,7 @@ const bool day12::Path::would_fit_with_dot(const std::vector<int> &expected_grou
     return true;
 }
 
-const bool day12::Path::would_fit_with_hashtag(const std::vector<int> &expected_groups) {
+bool day12::Path::would_fit_with_hashtag(const std::vector<int> &expected_groups) const {
 
     if (in_group()) {
         // would increment curr_group_length check if this fits with expected group
@@ -71,9 +71,9 @@ const bool day12::Path::would_fit_with_hashtag(const std::vector<int> &expected_
     return true;fits_in(expected_groups);
 }
 
-const void day12::Path::print() {
+void day12::Path::print() const {
     std::cout << "<";
-    for (int &i: curr_groups) {
+    for (const int &i: curr_groups) {
         std::cout << i;
     }
     std::cout << "> " << " Pending group length: " << curr_group_length;
