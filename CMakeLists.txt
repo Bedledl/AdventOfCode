@@ -11,6 +11,7 @@ set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
+set(SOLVED_DAYS 1 2 4 12 12_bf 17)
 
 project(AdventOfCode2023)
 
@@ -20,18 +21,11 @@ target_compile_definitions(AoC2023 PRIVATE INPUT_FILES_DIR="${AdventOfCode2023_S
 
 target_include_directories(AoC2023 PUBLIC ${AdventOfCode2023_SOURCE_DIR}/include)
 
-add_subdirectory(Day4)
-target_link_libraries(AoC2023 Day4)
-add_subdirectory(Day1)
-target_link_libraries(AoC2023 Day1)
-add_subdirectory(Day2)
-target_link_libraries(AoC2023 Day2)
-add_subdirectory(Day12_bf)
-target_link_libraries(AoC2023 Day12_bf)
-add_subdirectory(Day12)
-target_link_libraries(AoC2023 Day12)
-add_subdirectory(Day17)
-target_link_libraries(AoC2023 Day17)
+foreach(X ${SOLVED_DAYS})
+    add_subdirectory(Day${X})
+    target_link_libraries(AoC2023 Day${X})
+endforeach()
+
 
 add_subdirectory(utils)
 target_link_libraries(AoC2023 Utils)
