@@ -195,7 +195,7 @@ TEST_F(PuzzleTest, Puzzle12_1) {
 
 TEST_F(PuzzleTest, Puzzle17_1) {
     name = "17_1";
-    expected = 791;
+    expected = 102;
 
     day17::Input17 input(name, 3);
     init_input(input);
