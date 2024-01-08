@@ -152,9 +152,31 @@ TEST_F(PuzzleTest, Puzzle12_1) {
 //     run();
 // }
 
+
+TEST_F(PuzzleTest, Puzzle17_1) {
+    name = "17_1";
+    expected = 791;
+
+    day17::Input17 input(name, 3);
     init_input(input);
 
+    day17::Puzzle17 puzzle{};
 
+    run_puzzle = [&input, &puzzle]() { return puzzle.run_part_1(input); };
+
+    run();
+}
+
+TEST_F(PuzzleTest, Puzzle17_2) {
+    name = "17_2";
+    expected = 94;
+
+    day17::Input17 input(name, 10);
+    init_input(input);
+
+    day17::Puzzle17 puzzle{};
+
+    run_puzzle = [&input, &puzzle]() { return puzzle.run_part_2(input); };
 
     run();
 }
