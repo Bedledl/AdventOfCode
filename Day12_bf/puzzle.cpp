@@ -14,7 +14,7 @@ const std::vector<int> day12_bf::SpringRecord::get_broken_indices()
 {
     std::vector<int> indices;
 
-    for (int i = 0; i < damaged_record.size(); ++i)
+    for (unsigned i = 0; i < damaged_record.size(); ++i)
     {
         if (damaged_record[i] == '?')
         {
@@ -43,7 +43,7 @@ const std::vector<std::string> day12_bf::SpringRecord::get_records_permutations(
         // fill each permutation at the indices anc add it to permutations vector
         std::string record_permutation = damaged_record;
 
-        for (int i = 0; i < indices.size(); ++i)
+        for (unsigned i = 0; i < indices.size(); ++i)
         {
             record_permutation[indices[i]] = permutation[i];
         }
@@ -57,9 +57,9 @@ const std::regex day12_bf::SpringRecord::get_regex()
 {
     std::string regex = "\\.*";
 
-    for (int i = 0; i < group_of_dmgd_springs.size(); ++i)
+    for (unsigned i = 0; i < group_of_dmgd_springs.size(); ++i)
     {
-        int group_size = group_of_dmgd_springs[i];
+        auto group_size = group_of_dmgd_springs[i];
 
         std::string group_regex = "#{" + std::to_string(group_size) + "}";
 
@@ -80,10 +80,10 @@ const std::regex day12_bf::SpringRecord::get_regex()
 
 int day12_bf::SpringRecord::get_num_possible_arangements()
 {
-    int fitting_permutations = 0;
+    unsigned fitting_permutations = 0;
     const std::regex regex = get_regex();
     const std::vector<std::string> records_permutations = day12_bf::SpringRecord::get_records_permutations();
-    int num_dmgd_springs = std::reduce(group_of_dmgd_springs.begin(), group_of_dmgd_springs.end());
+    //auto num_dmgd_springs = std::reduce(group_of_dmgd_springs.begin(), group_of_dmgd_springs.end());
 
     for (const std::string &permutation : records_permutations)
     {
