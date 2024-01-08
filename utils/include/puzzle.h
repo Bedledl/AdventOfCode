@@ -33,7 +33,9 @@ class Puzzle {
     virtual int run_part_2(I &input) = 0;
     int get_time_to_run_1(I &input) { return funcTime([&input, this](){this->run_part_1(input);}); }
     int get_time_to_run_2(I &input) { return funcTime([&input, this](){this->run_part_2(input);}); }
-    void run_and_print_puzzle(I &input, Output &outout) {
+    void run_and_print_puzzle(I &input, Output &output) {
+        input;
+        output;
         std::cout << "Print Test" << std::endl;
     };
     void print_result(int part, int result) {
