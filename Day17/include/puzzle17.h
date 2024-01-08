@@ -14,7 +14,7 @@ namespace day17
         None, North, East, South, West
     };
 
-    day17::Direction get_opposite_direction(day17::Direction dir);
+    std::optional<day17::Direction> get_opposite_direction(day17::Direction dir);
     char get_char_to_direction(day17::Direction dir);
 
     /// @brief Stores the current end field, length and moves in the current direction for a Path.
@@ -48,7 +48,11 @@ namespace day17
             return true;
         }
         bool is_opposite_direction(Direction dir) {
-            return dir == get_opposite_direction(current_direction);
+            auto opposite = get_opposite_direction(current_direction);
+            if(!opposite) {
+                return false;
+            }
+            return dir == opposite.value();
         }
         const int get_shortest_distance() {return min_distance;};
         Direction get_direction() { return current_direction; }

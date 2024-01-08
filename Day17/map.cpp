@@ -62,55 +62,6 @@ day17::Field* day17::Map::get_at(int x, int y) {
     return {};
 }
 
-day17::Direction get_opposite_direction(day17::Direction dir) {
-    switch (dir)
-    {
-    case day17::Direction::North:
-        return day17::Direction::South;
-        break;
-
-    case day17::Direction::South:
-        return day17::Direction::North;
-        break;
-
-    case day17::Direction::East:
-        return day17::Direction::West;
-        break;
-
-    case day17::Direction::West:
-        return day17::Direction::East;
-        break;
-
-    default:
-        throw std::runtime_error("Cannot get opposite direction of this direction");
-        break;
-    }
-}
-
-char get_char_to_direction(day17::Direction dir) {
-    switch (dir)
-    {
-    case day17::Direction::North:
-        return '^';
-        break;
-
-    case day17::Direction::South:
-        return 'v';
-        break;
-
-    case day17::Direction::East:
-        return '>';
-        break;
-
-    case day17::Direction::West:
-        return '<';
-        break;
-
-    default:
-        throw std::runtime_error("Cannot get opposite direction of this direction");
-        break;
-    }
-}
 /*
 void day17::Map::print_path(int x, int y) {
     std::vector<std::string> map;
