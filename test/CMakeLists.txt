@@ -29,7 +29,7 @@ add_executable(testPuzzles testPuzzles.cpp)
 target_include_directories(testPuzzles PUBLIC ${AdventOfCode2023_SOURCE_DIR}/include)
 
 foreach(X ${SOLVED_DAYS})
-  target_link_libraries(testPuzzles Day${X} Utils)
+  target_link_libraries(testPuzzles Day${X})
 endforeach()
 
 target_link_libraries(testPuzzles GTest::gtest_main)
