@@ -39,10 +39,6 @@ const bool day12::Path::fits_accuratly(const std::vector<int> &expected_groups) 
 }
 
 const bool day12::Path::would_fit_with_dot(const std::vector<int> &expected_groups) {
-    if(!fits_in(expected_groups)){
-        return false;
-    }
-
     if (in_group()) {
         // the dot would finnish a new group
         if (expected_groups.size() < curr_groups.size() + 1) {
@@ -58,24 +54,21 @@ const bool day12::Path::would_fit_with_dot(const std::vector<int> &expected_grou
 }
 
 const bool day12::Path::would_fit_with_hashtag(const std::vector<int> &expected_groups) {
-    if(!fits_in(expected_groups)){
-        return false;
-    }
 
     if (in_group()) {
         // would increment curr_group_length check if this fits with expected group
-        if (expected_groups[curr_groups.size()] > curr_group_length) {
-            return true;
+        if (expected_groups[curr_groups.size()] <= curr_group_length) {
+            return false;
         }
     }
     else {
         // start new group; just check if we do not exceed expected numbers of groups
-        if (curr_groups.size() < expected_groups.size()) {
-            return true;
+        if (curr_groups.size() >= expected_groups.size()) {
+            return false;
         }
     }
 
-    return false;
+    return true;fits_in(expected_groups);
 }
 
 const void day12::Path::print() {

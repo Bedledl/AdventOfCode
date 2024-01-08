@@ -34,6 +34,7 @@ namespace day12
         /// @brief Calculates the numbers of possible arangements that fit the given group lengths
         /// @return Number of possible fitting aragements
         int get_num_possible_arangements();
+        int get_num_possible_arangements_dfs();
     };
 
     struct Input12 : Input
