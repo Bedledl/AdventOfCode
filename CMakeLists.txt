@@ -24,6 +24,7 @@ target_include_directories(AoC2023 PUBLIC ${AdventOfCode2023_SOURCE_DIR}/include
 foreach(X ${SOLVED_DAYS})
     add_subdirectory(Day${X})
     target_link_libraries(AoC2023 Day${X})
+    add_compile_definitions(PUZZLE${X})
 endforeach()
 
 

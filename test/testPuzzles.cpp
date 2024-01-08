@@ -2,12 +2,23 @@
 
 #include <gtest/gtest.h>
 
+#ifdef PUZZLE1
 #include "puzzle1.h"
-#include "puzzle4.h"
+#endif
+#ifdef PUZZLE2
 #include "puzzle2.h"
+#endif
+#ifdef PUZZLE4
+#include "puzzle4.h"
+#endif
+#ifdef PUZZLE12
 #include "puzzle12_bf.h"
 #include "puzzle12.h"
+#endif
+#ifdef PUZZLE17
 #include "puzzle17.h"
+#endif
+
 
 class PuzzleTest : public testing::Test {
     protected:
@@ -32,6 +43,7 @@ class PuzzleTest : public testing::Test {
         }
 };
 
+#ifdef PUZZLE1
 TEST_F(PuzzleTest, Puzzle1_1) {
     name = "1_1";
     expected = 142;
@@ -55,7 +67,9 @@ TEST_F(PuzzleTest, Puzzle1_2) {
 
     run();
 }
+#endif
 
+#ifdef PUZZLE2
 TEST_F(PuzzleTest, Puzzle2_1) {
     name = "2_1";
     expected = 8;
@@ -84,6 +98,9 @@ TEST_F(PuzzleTest, Puzzle2_2) {
     run();
 }
 
+#endif
+
+#ifdef PUZZLE4
 TEST_F(PuzzleTest, Puzzle4_1) {
     name = "4";
     expected = 13;
@@ -111,6 +128,10 @@ TEST_F(PuzzleTest, Puzzle4_2) {
 
     run();
 }
+
+#endif
+
+#ifdef PUZZLE12
 
 TEST_F(PuzzleTest, Puzzle12_1) {
     name = "12_1_bf";
@@ -168,6 +189,9 @@ TEST_F(PuzzleTest, Puzzle12_1) {
 //     run();
 // }
 
+#endif
+
+#ifdef PUZZLE17
 
 TEST_F(PuzzleTest, Puzzle17_1) {
     name = "17_1";
@@ -196,3 +220,5 @@ TEST_F(PuzzleTest, Puzzle17_2) {
 
     run();
 }
+
+#endif

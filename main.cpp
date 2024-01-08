@@ -1,11 +1,21 @@
 #include <iostream>
 
+#ifdef PUZZLE1
 #include "Day1/include/puzzle1.h"
+#endif
+#ifdef PUZZLE2
 #include "Day2/include/puzzle2.h"
+#endif
+#ifdef PUZZLE4
 #include "Day4/include/puzzle4.h"
-#include "Day12_bf/include/puzzle12_bf.h"
+#endif
+#ifdef PUZZLE12
 #include "Day12/include/puzzle12.h"
+#include "Day12_bf/include/puzzle12_bf.h"
+#endif
+#ifdef PUZZLE17
 #include "Day17/include/puzzle17.h"
+#endif
 
 constexpr std::string input_files_dir()  { return INPUT_FILES_DIR; };
 
@@ -30,24 +40,32 @@ int main(void) {
     std::cout << "These are my solutions for the Advent of Code 2023 games!\n";
 
     // This is currently very un-beautiful
+
+    #ifdef PUZZLE1
     day1::Input1 input1("1");
     init_input(input1);
     day1::Puzzle1 puzzle1;
     puzzle1.print_result(1, puzzle1.run_part_1(input1));
     puzzle1.print_result(2, puzzle1.run_part_2(input1));
+    #endif
 
+    #ifdef PUZZLE2
     day2::Input2 input2 = day2::Input2("2");
     init_input(input2);
     day2::Puzzle2 puzzle2;
     puzzle2.print_result(1, puzzle2.run_part_1(input2));
     puzzle2.print_result(2,  puzzle2.run_part_2(input2));
+    #endif
 
+    #ifdef PUZZLE4
     day4::Input4 input4{"4"};
     init_input(input4);
     day4::Puzzle4 puzzle4;
     puzzle4.print_result(1, puzzle4.run_part_1(input4));
     puzzle4.print_result(2, puzzle4.run_part_2(input4));
+    #endif
 
+    #ifdef PUZZLE12
     // day12_bf::Input12 input12_bf("12");
     // init_input(input12_bf);
     // day12_bf::Puzzle12 puzzle12_bf;
@@ -59,7 +77,9 @@ int main(void) {
     // std::cout << puzzle12.run_part_1(input12) << std::endl;
     // std::cout << puzzle12.run_part_2(input12) << std::endl;
 
+    #endif
 
+    #ifdef PUZZLE17
     day17::Input17 input17_1 = day17::Input17("17", 3);
     init_input(input17_1);
 
@@ -71,4 +91,5 @@ int main(void) {
     puzzle17.print_result(2, puzzle17.run_part_2(input17_2));
     std::cout << puzzle17.get_time_to_run_1(input17_1) << std::endl;
     std::cout << puzzle17.get_time_to_run_2(input17_2) << std::endl;
+    #endif
 }
