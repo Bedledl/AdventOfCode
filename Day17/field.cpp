@@ -4,7 +4,6 @@
 bool day17::Field::update_highscores(Direction dir, uint8_t moved_in_dir, unsigned distance_until_now) {
     bool updated = false;
     for (uint8_t i=moved_in_dir-1; i<max_same_dir; ++i) {
-        auto score = highscores[dir][i];
         if (distance_until_now < highscores[dir][i]) {
             updated = true;
             highscores[dir][i] = distance_until_now;

@@ -12,9 +12,20 @@
 
 #include <unistd.h>
 
+[[nodiscard]] bool day17::ShortestDistanceFinder::try_moving_path_n_steps(Map &map, Path &path, uint8_t steps, day17::Direction dir) const {
+    for (uint8_t i=0; i<steps; ++i) {
+        auto coordinates = path.get_coordinates();
+        auto neighbor = map.get_neighbor(coordinates.first, coordinates.second, dir);
+        if ( !neighbor) {
+            return false;
+        }
+        path.move(dir, neighbor->get_heatloss());
+    }
+    return true;
+};
 
 [[nodiscard]] unsigned day17::ShortestDistanceFinder::find_shortest_path(
-    Map &map, uint8_t startx, uint8_t starty, uint8_t endx, uint8_t endy) {
+    Map &map, uint8_t startx, uint8_t starty, uint8_t endx, uint8_t endy) const {
 
     auto queue = DijkstraQueue<Path, PathComparator>();
     auto start = map.get_at(startx, starty);
@@ -49,23 +60,14 @@
             }
 
             auto path_copy = new Path(*current);
-            day17::Field *neighbor = NULL;
 
-            for (uint8_t i=0; i<try_n_moves; ++i) {
-                auto coordinates = path_copy->get_coordinates();
-                neighbor = map.get_neighbor(coordinates.first, coordinates.second, dir);
-                if (!neighbor) {
-                    break;
-                }
-
-                path_copy->move(dir, neighbor->get_heatloss());
-            }
-
-            if (!neighbor) {
+            if (!try_moving_path_n_steps(map, *path_copy, try_n_moves, dir)) {
                 continue;
             }
 
-            if (!neighbor->update_highscores(dir, path_copy->get_moved_in_dir(), path_copy->get_shortest_distance())) {
+            auto new_field = map.get_at(path_copy->get_coordinates());
+
+            if (!new_field->update_highscores(dir, path_copy->get_moved_in_dir(), path_copy->get_shortest_distance())) {
                     continue;
             }
 

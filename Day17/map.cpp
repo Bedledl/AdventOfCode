@@ -48,6 +48,8 @@ day17::Map::Map(std::vector<std::vector<uint8_t>> raw_map, uint8_t max_same_dir)
             return &map[x][y - n];
         }
         break;
+    case Direction::None:
+        return {};
     }
 
     return NULL;
@@ -122,7 +124,7 @@ void day17::Map::print_heatloss() {
     }
     std::cout << std::endl;
 }
-/*
+
 void day17::Map::print_visited() {
     std::cout << "\033[2J\033[1;1H";
     for (int x=0; x < size_x; ++x) {

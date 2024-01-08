@@ -133,11 +133,13 @@ namespace day17
 
     /// @brief Pathfinder strategy for Puzzle 17
     class ShortestDistanceFinder {
+    public:
+        ShortestDistanceFinder(uint8_t min_same_dir, uint8_t max_same_dir) : min_same_dir(min_same_dir), max_same_dir(max_same_dir) {};
+        unsigned find_shortest_path(Map &map, uint8_t startx, uint8_t starty, uint8_t endx, uint8_t endy) const;
+    private:
         const uint8_t min_same_dir;
         const uint8_t max_same_dir;
-        public:
-        ShortestDistanceFinder(uint8_t min_same_dir, uint8_t max_same_dir) : min_same_dir(min_same_dir), max_same_dir(max_same_dir) {};
-        unsigned find_shortest_path(Map &map, uint8_t startx, uint8_t starty, uint8_t endx, uint8_t endy);
+        bool try_moving_path_n_steps(Map &map, Path &path, uint8_t steps, Direction dir) const;
     };
 
     struct Input17 : Input
